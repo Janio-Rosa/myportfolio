@@ -1,0 +1,53 @@
+// Import Assets
+import profile from '../assets/profile.png';
+import profileJanio from '../assets/profileJanio.jpg';
+import React from "react"
+import {Alert} from "react" 
+import Modal from "react-modal";
+
+class MyMessageAlert extends React.Component {
+
+  openTwoButtonAlert=()=>{
+    Alert.alert(
+      'Hey There!',
+      'Two button alert dialog',
+      [
+        {text: 'Yes', onPress: () => console.log('Yes button clicked')},
+        {text: 'No', onPress: () => console.log('No button clicked'), style: 'cancel'},
+      ],
+      {
+        cancelable: true
+      }
+    );
+  };
+
+	render(){
+		return (
+		<button title='mailto:janio.r.silva@gmail.com' className='button' onClick={this.openTwoButtonAlert} >Get In Touch: janio.r.silva@gmail.com</button>
+			
+		);
+	}
+
+}
+
+const Header = () => {
+
+    return (
+        <section className='header'>
+            <img src={profileJanio} alt="Janio Silva" />
+
+            <div className='header__content'>
+                <h1>Hi, I'm Janio Silva</h1>
+                <p>Blockchain Developer (mostly Solidity and Cairo)</p>
+     <button title='mailto:janio.r.silva@gmail.com' className='button'  >Get In Touch: janio.r.silva@gmail.com</button>
+	    <MyMessageAlert/>
+	    <p>+55(31)992 168 011</p>
+
+            </div>
+        </section>
+    );
+};
+
+
+
+export default Header;

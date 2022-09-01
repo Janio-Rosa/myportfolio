@@ -1,0 +1,109 @@
+// Import Assets
+import profile from '../assets/profile.png';
+import React, { useState } from "react";
+import profileJanio from '../assets/profileJanio.jpg';
+import {View, Modal, Alert, StyleSheet, Text, Pressable} from "react";
+
+const Header = () => {
+const modalVisible = false;
+	const centeredView = {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  };
+
+const  modalView = {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  };
+
+const   button = {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2
+  };
+
+const   buttonOpen = {
+    backgroundColor: "#F194FF",
+  };
+
+const   buttonClose = {
+    backgroundColor: "#2196F3",
+  };
+
+const   textStyle = {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  };
+
+const   modalText = {
+    marginBottom: 15,
+    textAlign: "center"
+  };
+
+	return (
+	    <section className='header'>
+
+            <img src={profileJanio} alt="Janio Silva" />
+
+            <div className='header__content'>
+                <h1>Hi, I'm Janio Silva</h1>
+                <p>Blockchain Developer (mostly Solidity and Cairo)</p>
+     <a href='mailto:janio.r.silva@gmail.com' className='button'>Get In Touch: janio.r.silva@gmail.com</a>
+	    <p>+55(31)992 168 011</p>
+
+            </div>
+
+	    <div>
+    <View style={centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+        }}
+      >
+        <View style={centeredView}>
+          <View style={modalView}>
+            <Text style={modalText}>Hello World!</Text>
+            <Pressable
+              style={[button, buttonClose]}
+            >
+              <Text style={textStyle}>Hide Modal</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      <Pressable
+        style={[button, buttonOpen]}
+      >
+        <Text style={textStyle}>Show Modal</Text>
+      </Pressable>
+    </View>
+
+	    </div>
+
+
+        </section>
+    );
+};
+
+
+
+
+
+export default Header;
