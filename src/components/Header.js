@@ -36,7 +36,7 @@ const Header = () => {
 
             <div className='header__content'>
                 <h1>Hi, I'm Janio Silva</h1>
-                <p>Blockchain Developer (Solidity)</p>
+                <p>Blockchain Security Researcher (Solidity &amp; Cairo)</p>
      <button title='janio.r.silva@gmail.com' className='button' onClick={toogleModal}  >Get In Touch</button>
 
             </div>
